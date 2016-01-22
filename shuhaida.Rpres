@@ -1,0 +1,70 @@
+========================================================
+author: Shuhaida Mohamed Shuhidan
+date: Developing Data Products Course Project 
+
+========================================================
+Title: Developing Data Products Course Project 
+
+Course Project : BMI Calculator
+
+Introduction
+Body mass index (BMI) is a measure of body fat based on height and weight that applies to adult men and women.
+
+
+BMI Categories:
+
+Underweight = <18.5
+
+Normal weight = 18.5-24.9
+
+Overweight = 25-29.9
+
+Obesity = BMI of 30 or greater
+
+Project is available at https://shuhaida6704.shinyapps.io/m9assignment/
+
+
+========================================================
+
+Course Project : BMI Calculator
+
+Using Shiny
+
+Has various slider types for input
+- numbericInput
+- radio button
+- Has reactive code which computes the bmi based on user's weight and height.
+
+========================================================
+Simple Calculation for BMI
+
+Two options are provided;
+ 1. weight (kilogram (kg)) and height (metres (m)).
+ 2. weight (pounds (lb) and height (inches (in)).
+
+For Option 1: To calculate BMI, 
+
+BMI = weight / (height*height)
+
+For Option 2:
+
+BMI = weight / (height*height) * 703
+
+
+========================================================
+
+R code
+
+INPUT
+
+      radioButtons(inputId  = "units", label    = "Units:", choices  = c("Metric (kg & m)" = 1, "Imperial (lb & in)" = 2), selected = 1),
+      
+      numericInput(inputId = "mass", label = strong("Your weight:"), value = 70,min = 10, max = 250),
+      
+      numericInput( inputId = "height", label = strong("Your height:"), value = 1.80, step  = 0.10, min = 0.2, max = 3.0),
+        
+      h3("BMI Values:"),
+      uiOutput("input"),
+      uiOutput("result")
+      
+
